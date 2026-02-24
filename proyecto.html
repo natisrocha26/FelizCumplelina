@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌷🎉 ¡FELIZ DÍA, LINITA HERMOSA! 🎉🌷</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#ff4d88;
+    --glass:rgba(255,255,255,0.15);
+    --shadow:0 8px 32px rgba(0,0,0,0.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:50px 20px 20px 20px;
+    animation:fadeDown 1.2s ease;
+}
+
+header h1{
+    font-size:40px;
+    font-weight:700;
+}
+
+/* CARD */
+.glass-card{
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+    padding:30px;
+    background:var(--glass);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    box-shadow:var(--shadow);
+}
+
+/* CARRUSEL */
+.carousel-container{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.carousel{
+    display:flex;
+    transition:transform 0.6s ease-in-out;
+}
+
+.carousel img{
+    width:100%;
+    height:500px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.4);
+    border:none;
+    color:white;
+    padding:10px 15px;
+    cursor:pointer;
+    border-radius:50%;
+}
+
+.prev{ left:15px; }
+.next{ right:15px; }
+
+.indicators{
+    display:flex;
+    justify-content:center;
+    margin-top:15px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    margin:0 5px;
+    border-radius:50%;
+    background:white;
+    opacity:0.5;
+    cursor:pointer;
+}
+
+.dot.active{
+    opacity:1;
+    background:var(--primary);
+}
+
+/* CARTA */
+.carta{
+    margin-top:30px;
+    font-size:18px;
+    line-height:1.8;
+    text-align:center;
+}
+
+/* MUSIC */
+.music-player{
+    text-align:center;
+    margin-top:25px;
+}
+
+.music-player button{
+    background:var(--primary);
+    border:none;
+    padding:12px 30px;
+    border-radius:30px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.equalizer{
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
+    gap:5px;
+}
+
+.bar{
+    width:5px;
+    height:20px;
+    background:white;
+    animation:bounce 1s infinite ease-in-out;
+}
+
+.bar:nth-child(2){animation-delay:.2s;}
+.bar:nth-child(3){animation-delay:.4s;}
+.bar:nth-child(4){animation-delay:.6s;}
+
+@keyframes bounce{
+    0%,100%{height:10px;}
+    50%{height:30px;}
+}
+
+/* EMOJI CONFETTI */
+.emoji{
+    position:fixed;
+    top:-40px;
+    pointer-events:none;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(0) translateX(0) rotate(0deg);
+        opacity:1;
+    }
+    50%{
+        transform:translateY(50vh) translateX(30px) rotate(180deg);
+    }
+    100%{
+        transform:translateY(110vh) translateX(-30px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:768px){
+    .carousel img{height:350px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎉✨ ¡FELIZ CUMPLEAÑOS, LINITA QUERIDA! ✨🎉</h1>
+</header>
+
+<div class="glass-card">
+
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <img src="foto1.jpeg">
+            <img src="foto2.jpeg">
+            <img src="foto3.jpeg">
+            <img src="foto 4.jpeg">
+            <img src="foto 5.jpeg">
+            <img src="foto 6.jpeg">
+            <img src="foto 7.jpeg">
+            <img src="foto 8.jpeg">
+            <img src="foto 9.jpeg">
+            <img src="foto10.jpeg">
+            <img src="foto 11.jpeg">
+        </div>
+
+        <button class="btn prev" onclick="moveSlide(-1)">❮</button>
+        <button class="btn next" onclick="moveSlide(1)">❯</button>
+    </div>
+
+    <div class="indicators" id="indicators"></div>
+
+    <div class="carta">
+       🎂💖 ¡FELIZ VUELTA AL SOL, LINITA! 💖🎂<br><br>
+       Te quiero muchísimo, Linita hermosa 💕✨ Gracias por siempre estar para mí 🤍, por tu cariño tan sincero 🥰, por tu apoyo incondicional 🙌 y por cada palabra bonita que me regalas cuando más lo necesito 💌. Eres una persona muy especial en mi vida 🌷 y me siento muy agradecida de tenerte 💖. Recuerda que para siempre serás mi cuñada 👭💞 y que siempre contarás conmigo en las buenas y en las no tan buenas 🤝✨. Que Dios te bendiga hoy, mañana y siempre 🙏🌟, que te regale salud 🕊️, amor 💘, paz 🌸 y que todos los deseos de tu corazón se hagan realidad 🎂🎁🎉.
+    </div>
+
+    <div class="music-player">
+        <button id="musicBtn">🎵 Reproducir música</button>
+        <div class="equalizer" id="equalizer" style="display:none;">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+
+<script>
+/* CARRUSEL */
+const carousel=document.getElementById("carousel");
+const totalSlides=carousel.children.length;
+const indicators=document.getElementById("indicators");
+let index=0;
+
+for(let i=0;i<totalSlides;i++){
+    const dot=document.createElement("div");
+    dot.classList.add("dot");
+    if(i===0)dot.classList.add("active");
+    dot.addEventListener("click",()=>goToSlide(i));
+    indicators.appendChild(dot);
+}
+
+function updateIndicators(){
+    document.querySelectorAll(".dot").forEach((dot,i)=>{
+        dot.classList.toggle("active",i===index);
+    });
+}
+
+function moveSlide(step){
+    index+=step;
+    if(index<0)index=totalSlides-1;
+    if(index>=totalSlides)index=0;
+    carousel.style.transform=`translateX(-${index*100}%)`;
+    updateIndicators();
+}
+
+function goToSlide(i){
+    index=i;
+    carousel.style.transform=`translateX(-${index*100}%)`;
+    updateIndicators();
+}
+
+setInterval(()=>moveSlide(1),5000);
+
+/* MUSICA PRO */
+const music=document.getElementById("bgMusic");
+const musicBtn=document.getElementById("musicBtn");
+const equalizer=document.getElementById("equalizer");
+let isPlaying=false;
+
+function fadeInAudio(){
+    music.volume=0;
+    music.play();
+    let vol=0;
+    const fade=setInterval(()=>{
+        if(vol<1){
+            vol+=0.05;
+            music.volume=vol;
+        }else clearInterval(fade);
+    },200);
+}
+
+musicBtn.addEventListener("click",()=>{
+    if(!isPlaying){
+        fadeInAudio();
+        musicBtn.textContent="⏸ Pausar música";
+        equalizer.style.display="flex";
+    }else{
+        music.pause();
+        musicBtn.textContent="🎵 Reproducir música";
+        equalizer.style.display="none";
+    }
+    isPlaying=!isPlaying;
+});
+
+/* EMOJIS CONFETI + EXPLOSION */
+const emojis=["🎉","🎊","💖","✨","🎂","🥳","🎈","💕","👑","🌸"];
+
+function createEmoji(){
+    const el=document.createElement("div");
+    el.classList.add("emoji");
+    el.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left=Math.random()*window.innerWidth+"px";
+    el.style.fontSize=(Math.random()*20+20)+"px";
+    el.style.animationDuration=(Math.random()*3+4)+"s";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),7000);
+}
+
+setInterval(createEmoji,200);
+
+/* Explosión al hacer clic */
+document.addEventListener("click",(e)=>{
+    for(let i=0;i<15;i++){
+        const burst=document.createElement("div");
+        burst.classList.add("emoji");
+        burst.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+        burst.style.left=e.clientX+"px";
+        burst.style.top=e.clientY+"px";
+        burst.style.fontSize="25px";
+        burst.style.animationDuration="2s";
+        document.body.appendChild(burst);
+        setTimeout(()=>burst.remove(),2000);
+    }
+});
+</script>
+
+</body>
+</html>
