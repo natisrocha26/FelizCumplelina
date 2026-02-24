@@ -1,334 +1,411 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌷🎉 ¡FELIZ DÍA, LINITA HERMOSA! 🎉🌷</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌷🎉 ¡FELIZ CUMPLEAÑOS, LINITA HERMOSA! 🎉🌷</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-:root{
-    --primary:#ff4d88;
-    --glass:rgba(255,255,255,0.15);
-    --shadow:0 8px 32px rgba(0,0,0,0.25);
-}
+    <style>
+        :root {
+            --primary: #ff4d88;
+            --primary-dark: #e03e78;
+            --glass: rgba(255, 245, 250, 0.35); /* más claro y rosado suave */
+            --text-main: #111111; /* negro suave para máximo contraste */
+            --text-soft: #222222;
+            --shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body{
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-    min-height:100vh;
-    overflow-x:hidden;
-    color:white;
-}
+        body {
+            background: linear-gradient(135deg, #f9c6d0 0%, #f8e1e9 50%, #fad0c4 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: var(--text-main);
+            background-attachment: fixed;
+        }
 
-/* HEADER */
-header{
-    text-align:center;
-    padding:50px 20px 20px 20px;
-    animation:fadeDown 1.2s ease;
-}
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+            animation: fadeDown 1.3s ease;
+        }
 
-header h1{
-    font-size:40px;
-    font-weight:700;
-}
+        header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-shadow: 0 3px 12px rgba(255, 77, 136, 0.5);
+        }
 
-/* CARD */
-.glass-card{
-    width:90%;
-    max-width:900px;
-    margin:30px auto;
-    padding:30px;
-    background:var(--glass);
-    backdrop-filter:blur(15px);
-    border-radius:25px;
-    box-shadow:var(--shadow);
-}
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-/* CARRUSEL */
-.carousel-container{
-    position:relative;
-    overflow:hidden;
-    border-radius:20px;
-}
+        .glass-card {
+            width: 92%;
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 35px;
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
 
-.carousel{
-    display:flex;
-    transition:transform 0.6s ease-in-out;
-}
+        /* CARRUSEL - fotos completas sin recorte */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 22px;
+            margin-bottom: 25px;
+            background: rgba(0,0,0,0.04); /* fondo sutil si hay espacios */
+        }
 
-.carousel img{
-    width:100%;
-    height:500px;
-    object-fit:contain;
-    flex-shrink:0;
-}
+        .carousel {
+            display: flex;
+            transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
 
-.btn{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:rgba(0,0,0,0.4);
-    border:none;
-    color:white;
-    padding:10px 15px;
-    cursor:pointer;
-    border-radius:50%;
-}
+        .carousel img {
+            width: 100%;
+            height: 520px;
+            object-fit: contain;          /* ← clave: muestra la foto completa */
+            object-position: center;
+            background: rgba(0,0,0,0.03); /* fondo muy sutil para fotos claras */
+            flex-shrink: 0;
+            padding: 10px 0;              /* espacio arriba/abajo si es necesario */
+        }
 
-.prev{ left:15px; }
-.next{ right:15px; }
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 77, 136, 0.85);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: white;
+            font-size: 1.8rem;
+            padding: 14px 18px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
 
-.indicators{
-    display:flex;
-    justify-content:center;
-    margin-top:15px;
-}
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-50%) scale(1.1);
+        }
 
-.dot{
-    width:12px;
-    height:12px;
-    margin:0 5px;
-    border-radius:50%;
-    background:white;
-    opacity:0.5;
-    cursor:pointer;
-}
+        .prev { left: 18px; }
+        .next { right: 18px; }
 
-.dot.active{
-    opacity:1;
-    background:var(--primary);
-}
+        .indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 18px;
+            gap: 10px;
+        }
 
-/* CARTA */
-.carta{
-    margin-top:30px;
-    font-size:18px;
-    line-height:1.8;
-    text-align:center;
-}
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
 
-/* MUSIC */
-.music-player{
-    text-align:center;
-    margin-top:25px;
-}
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
 
-.music-player button{
-    background:var(--primary);
-    border:none;
-    padding:12px 30px;
-    border-radius:30px;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
+        /* CARTA - texto negro con sombra suave */
+        .carta {
+            margin: 40px 0 30px;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            text-align: center;
+            letter-spacing: 0.4px;
+            color: var(--text-main);
+            text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
 
-.equalizer{
-    display:flex;
-    justify-content:center;
-    margin-top:10px;
-    gap:5px;
-}
+        .carta strong {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
 
-.bar{
-    width:5px;
-    height:20px;
-    background:white;
-    animation:bounce 1s infinite ease-in-out;
-}
+        .firma {
+            margin-top: 35px;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--text-soft);
+            text-align: center;
+        }
 
-.bar:nth-child(2){animation-delay:.2s;}
-.bar:nth-child(3){animation-delay:.4s;}
-.bar:nth-child(4){animation-delay:.6s;}
+        /* MUSIC */
+        .music-player {
+            text-align: center;
+            margin: 30px 0;
+        }
 
-@keyframes bounce{
-    0%,100%{height:10px;}
-    50%{height:30px;}
-}
+        .music-player button {
+            background: var(--primary);
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(255,77,136,0.4);
+            transition: all 0.3s;
+        }
 
-/* EMOJI CONFETTI */
-.emoji{
-    position:fixed;
-    top:-40px;
-    pointer-events:none;
-    animation:fall linear forwards;
-}
+        .music-player button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
 
-@keyframes fall{
-    0%{
-        transform:translateY(0) translateX(0) rotate(0deg);
-        opacity:1;
-    }
-    50%{
-        transform:translateY(50vh) translateX(30px) rotate(180deg);
-    }
-    100%{
-        transform:translateY(110vh) translateX(-30px) rotate(360deg);
-        opacity:0;
-    }
-}
+        .music-player p {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            color: var(--text-soft);
+            opacity: 0.9;
+        }
 
-@media(max-width:768px){
-    .carousel img{height:350px;}
-}
-</style>
+        .equalizer {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 6px;
+        }
+
+        .bar {
+            width: 6px;
+            height: 22px;
+            background: var(--primary);
+            animation: bounce 1.2s infinite ease-in-out;
+        }
+
+        .bar:nth-child(2) { animation-delay: .25s; }
+        .bar:nth-child(3) { animation-delay: .5s; }
+        .bar:nth-child(4) { animation-delay: .75s; }
+
+        @keyframes bounce {
+            0%, 100% { height: 12px; }
+            50% { height: 38px; }
+        }
+
+        /* CONFETTI */
+        .emoji {
+            position: fixed;
+            top: -50px;
+            pointer-events: none;
+            animation: fall linear forwards;
+            z-index: 10;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(60vh) translateX(40px) rotate(180deg); }
+            100% { transform: translateY(120vh) translateX(-50px) rotate(360deg); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.4rem; }
+            .carousel img { 
+                height: 380px;          /* un poco más alto en móvil para mejor visualización */
+            }
+            .glass-card { padding: 25px; }
+            .carta { font-size: 1.05rem; line-height: 1.8; }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🎉✨ ¡FELIZ CUMPLEAÑOS, LINITA QUERIDA! ✨🎉</h1>
-</header>
+    <header>
+        <h1>🎉✨ ¡FELIZ CUMPLEAÑOS, LINITA QUERIDA! ✨🎉</h1>
+    </header>
 
-<div class="glass-card">
+    <div class="glass-card">
 
-    <div class="carousel" id="carousel">
-    <img src="fotos/foto1.jpeg" alt="Foto 1 Linita" loading="lazy">
-    <img src="fotos/foto2.jpeg" alt="Foto 2 Linita" loading="lazy">
-    <img src="fotos/foto3.jpeg" alt="Foto 3 Linita" loading="lazy">
-    <img src="fotos/foto%204.jpeg" alt="Foto 4 Linita" loading="lazy">
-    <img src="fotos/foto%205.jpeg" alt="Foto 5 Linita" loading="lazy">
-    <img src="fotos/foto%206.jpeg" alt="Foto 6 Linita" loading="lazy">
-    <img src="fotos/foto%207.jpeg" alt="Foto 7 Linita" loading="lazy">
-    <img src="fotos/foto%208.jpeg" alt="Foto 8 Linita" loading="lazy">
-    <img src="fotos/foto%209.jpeg" alt="Foto 9 Linita" loading="lazy">
-    <img src="fotos/foto10.jpeg" alt="Foto 10 Linita" loading="lazy">
-    <img src="fotos/foto%2011.jpeg" alt="Foto 11 Linita" loading="lazy">
-    </div>
-        <button class="btn prev" onclick="moveSlide(-1)">❮</button>
-        <button class="btn next" onclick="moveSlide(1)">❯</button>
-    </div>
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <img src="img/1.jpeg">
+                <img src="img/2.jpeg">
+                <img src="img/3.jpeg">
+                <img src="img/4.jpeg">
+                <img src="img/5.jpeg">
+                <img src="img/6.jpeg">
+                <img src="img/7.jpeg">
+                <img src="img/8.jpeg">
+                <img src="img/9.jpeg">
+                <img src="img/10.jpeg">
+                <img src="img/11.jpeg">
+            </div>
 
-    <div class="indicators" id="indicators"></div>
-
-    <div class="carta">
-       🎂💖 ¡FELIZ VUELTA AL SOL, LINITA! 💖🎂<br><br>
-       Te quiero muchísimo, Linita hermosa 💕✨ Gracias por siempre estar para mí 🤍, por tu cariño tan sincero 🥰, por tu apoyo incondicional 🙌 y por cada palabra bonita que me regalas cuando más lo necesito 💌. Eres una persona muy especial en mi vida 🌷 y me siento muy agradecida de tenerte 💖. Recuerda que para siempre serás mi cuñada 👭💞 y que siempre contarás conmigo en las buenas y en las no tan buenas 🤝✨. Que Dios te bendiga hoy, mañana y siempre 🙏🌟, que te regale salud 🕊️, amor 💘, paz 🌸 y que todos los deseos de tu corazón se hagan realidad 🎂🎁🎉.
-    </div>
-
-    <div class="music-player">
-        <button id="musicBtn">🎵 Reproducir música</button>
-        <div class="equalizer" id="equalizer" style="display:none;">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+            <button class="btn prev" onclick="moveSlide(-1)">❮</button>
+            <button class="btn next" onclick="moveSlide(1)">❯</button>
         </div>
+
+        <div class="indicators" id="indicators"></div>
+
+        <div class="carta">
+            🎂💖 ¡FELIZ VUELTA AL SOL, MI LINITA PRECIOSA! 💖🎂<br><br>
+
+            Hoy brilla un día más especial porque llegaste tú a este mundo.<br>
+            Linita hermosa, gracias por ser esa <strong>luz suave y constante</strong> en mi vida 🌷✨.<br>
+            Por tu risa que contagia, por tus abrazos que curan todo,<br>
+            por escucharme siempre con el corazón abierto 💌<br>
+            y por hacer que la palabra "cuñada" se sienta como "hermana del alma" 👭💞.<br><br>
+
+            Te admiro muchísimo: tu fuerza tranquila, tu bondad sin medida,<br>
+            tu manera de querer tan bonito y tan de verdad 🥰.<br>
+            Que este nuevo año te traiga <strong>salud a montones</strong> 🕊️,<br>
+            <strong>amor</strong> que te haga sonreír todos los días 💘,<br>
+            <strong>paz</strong> en el alma 🌸 y que cada deseo profundo que guardas<br>
+            encuentre su camino hasta hacerse realidad 🎁🌟.<br><br>
+
+            Nunca lo dudes: aquí estoy siempre, en las buenas, en las regulares<br>
+            y sobre todo en las que duelen. Te quiero con todo el corazón 🤍🙌<br>
+            ¡Que seas infinitamente feliz, porque te lo mereces todo y más! 🎉💕
+        </div>
+
+        <div class="firma">
+            Con todo mi cariño,<br>
+            Tu cuñada que te adora,<br>
+            Fiore 🤍🌸
+        </div>
+
+        <div class="music-player">
+            <button id="musicBtn">🎵 Reproducir música especial para ti</button>
+            <p>(Una melodía suave solo para mi Linita hermosa 💕)</p>
+            <div class="equalizer" id="equalizer" style="display:none;">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <audio id="bgMusic" loop>
+            <source src="sound/cancion.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+
     </div>
 
-    <audio id="bgMusic" loop preload="auto">
-    <source src="cancion/cancion.mp3" type="audio/mpeg">
-    </audio>
+    <script>
+        // Script sin cambios (mantiene carrusel, música, confeti)
+        const carousel = document.getElementById("carousel");
+        const totalSlides = carousel.children.length;
+        const indicators = document.getElementById("indicators");
+        let index = 0;
 
-</div>
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            if (i === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => goToSlide(i));
+            indicators.appendChild(dot);
+        }
 
-<script>
-/* CARRUSEL */
-const carousel=document.getElementById("carousel");
-const totalSlides=carousel.children.length;
-const indicators=document.getElementById("indicators");
-let index=0;
+        function updateIndicators() {
+            document.querySelectorAll(".dot").forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+            });
+        }
 
-for(let i=0;i<totalSlides;i++){
-    const dot=document.createElement("div");
-    dot.classList.add("dot");
-    if(i===0)dot.classList.add("active");
-    dot.addEventListener("click",()=>goToSlide(i));
-    indicators.appendChild(dot);
-}
+        function moveSlide(step) {
+            index += step;
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            updateIndicators();
+        }
 
-function updateIndicators(){
-    document.querySelectorAll(".dot").forEach((dot,i)=>{
-        dot.classList.toggle("active",i===index);
-    });
-}
+        function goToSlide(i) {
+            index = i;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            updateIndicators();
+        }
 
-function moveSlide(step){
-    index+=step;
-    if(index<0)index=totalSlides-1;
-    if(index>=totalSlides)index=0;
-    carousel.style.transform=`translateX(-${index*100}%)`;
-    updateIndicators();
-}
+        setInterval(() => moveSlide(1), 5500);
 
-function goToSlide(i){
-    index=i;
-    carousel.style.transform=`translateX(-${index*100}%)`;
-    updateIndicators();
-}
+        const music = document.getElementById("bgMusic");
+        const musicBtn = document.getElementById("musicBtn");
+        const equalizer = document.getElementById("equalizer");
+        let isPlaying = false;
 
-setInterval(()=>moveSlide(1),5000);
+        function fadeInAudio() {
+            music.volume = 0;
+            music.play().catch(() => {});
+            let vol = 0;
+            const fade = setInterval(() => {
+                if (vol < 1) {
+                    vol += 0.06;
+                    music.volume = vol;
+                } else clearInterval(fade);
+            }, 180);
+        }
 
-/* MUSICA PRO */
-const music=document.getElementById("bgMusic");
-const musicBtn=document.getElementById("musicBtn");
-const equalizer=document.getElementById("equalizer");
-let isPlaying=false;
+        musicBtn.addEventListener("click", () => {
+            if (!isPlaying) {
+                fadeInAudio();
+                musicBtn.textContent = "⏸ Pausar música";
+                equalizer.style.display = "flex";
+            } else {
+                music.pause();
+                musicBtn.textContent = "🎵 Reproducir música especial para ti";
+                equalizer.style.display = "none";
+            }
+            isPlaying = !isPlaying;
+        });
 
-function fadeInAudio(){
-    music.volume=0;
-    music.play();
-    let vol=0;
-    const fade=setInterval(()=>{
-        if(vol<1){
-            vol+=0.05;
-            music.volume=vol;
-        }else clearInterval(fade);
-    },200);
-}
+        const emojis = ["🎉", "🎊", "💖", "✨", "🎂", "🥳", "🎈", "💕", "🌷", "🌸", "👑", "🕊️"];
 
-musicBtn.addEventListener("click",()=>{
-    if(!isPlaying){
-        fadeInAudio();
-        musicBtn.textContent="⏸ Pausar música";
-        equalizer.style.display="flex";
-    }else{
-        music.pause();
-        musicBtn.textContent="🎵 Reproducir música";
-        equalizer.style.display="none";
-    }
-    isPlaying=!isPlaying;
-});
+        function createEmoji() {
+            const el = document.createElement("div");
+            el.classList.add("emoji");
+            el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            el.style.left = Math.random() * window.innerWidth + "px";
+            el.style.fontSize = (Math.random() * 28 + 22) + "px";
+            el.style.animationDuration = (Math.random() * 4 + 5) + "s";
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 8000);
+        }
 
-/* EMOJIS CONFETI + EXPLOSION */
-const emojis=["🎉","🎊","💖","✨","🎂","🥳","🎈","💕","👑","🌸"];
+        setInterval(createEmoji, 140);
 
-function createEmoji(){
-    const el=document.createElement("div");
-    el.classList.add("emoji");
-    el.innerText=emojis[Math.floor(Math.random()*emojis.length)];
-    el.style.left=Math.random()*window.innerWidth+"px";
-    el.style.fontSize=(Math.random()*20+20)+"px";
-    el.style.animationDuration=(Math.random()*3+4)+"s";
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(),7000);
-}
-
-setInterval(createEmoji,200);
-
-/* Explosión al hacer clic */
-document.addEventListener("click",(e)=>{
-    for(let i=0;i<15;i++){
-        const burst=document.createElement("div");
-        burst.classList.add("emoji");
-        burst.innerText=emojis[Math.floor(Math.random()*emojis.length)];
-        burst.style.left=e.clientX+"px";
-        burst.style.top=e.clientY+"px";
-        burst.style.fontSize="25px";
-        burst.style.animationDuration="2s";
-        document.body.appendChild(burst);
-        setTimeout(()=>burst.remove(),2000);
-    }
-});
-</script>
+        document.addEventListener("click", (e) => {
+            for (let i = 0; i < 18; i++) {
+                const burst = document.createElement("div");
+                burst.classList.add("emoji");
+                burst.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                burst.style.left = e.clientX + "px";
+                burst.style.top = e.clientY + "px";
+                burst.style.fontSize = "28px";
+                burst.style.animationDuration = "2.2s";
+                document.body.appendChild(burst);
+                setTimeout(() => burst.remove(), 2500);
+            }
+        });
+    </script>
 
 </body>
 </html>
